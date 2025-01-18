@@ -1,0 +1,2836 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<!-- styles -->
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="User Dashboard">
+	<meta name="keywords" content="User Dashboard">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<title>TabLogs</title>
+	<!-- =============== VENDOR STYLES ===============-->
+	<link rel="icon" href="https://app.tablogs.com/assets/img/favicon.png">
+
+	<!-- FONT AWESOME-->
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/vendor/fontawesome/css/font-awesome.min.css">
+
+	<!-- SIMPLE LINE ICONS-->
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/vendor/simple-line-icons/css/simple-line-icons.css">
+
+	<!-- ANIMATE.CSS-->
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/vendor/animate.css/animate.min.css">
+
+	<!-- WHIRL (spinners)-->
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/vendor/whirl/dist/whirl.css">
+
+	<!-- =============== PAGE VENDOR STYLES ===============-->
+	<!-- WEATHER ICONS-->
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/vendor/weather-icons/css/weather-icons.min.css">
+
+	<!-- =============== BOOTSTRAP STYLES ===============-->
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/css/bootstrap.css" id="bscss">
+
+	<!-- DATETIMEPICKER-->
+	
+	<link href="https://app.tablogs.com/assets/css/cdn-css/jquery.datetimepicker.min.css" rel="stylesheet">
+	<!-- COLORPICKER-->
+	<link rel="stylesheet"
+	href="https://app.tablogs.com/assets/vendor/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css">
+
+	<!-- SELECT2-->
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/vendor/select2/dist/css/select2.css">
+
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/vendor/select2-bootstrap-theme/dist/select2-bootstrap.css">
+
+	<!-- DATATABLES-->
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/vendor/datatables-colvis/css/dataTables.colVis.css">
+
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/vendor/datatables/media/css/dataTables.bootstrap.css">
+	<!-- SWEET ALERT-->
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/vendor/sweetalert/dist/sweetalert.css">
+
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/vendor/sweetalert2/sweetalert2.css">
+
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/vendor/dataTables.fontAwesome/index.css">
+
+	<!-- =============== APP STYLES ===============-->
+	
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/css/new_app.css" id="maincss">
+
+	<!-- =============== Custom ===============-->
+	
+	
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/css/toastr.css">
+
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/css/introjs.min.css">
+
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/css/introjs-modern.css">
+
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/css/custome.css?v=1">
+
+	
+	
+	<style>
+	--fc-event-bg-color {
+	background-color: #000000 !important;
+	}
+	
+	#chartPanel {
+	display: none;
+	}
+	
+	.y1Axis {
+	left: 10px !important;
+	}
+	
+	.x1Axis {
+	top: -240px !important;
+	left: 0px !important;
+	}
+	
+	.home-slider-caption {
+	z-index: 9;
+	position: absolute;
+	width: 100%;
+	padding: 20px;
+	text-align: left;
+	background-color: #00000073;
+	color: white;
+	bottom: 0px;
+	}
+	
+	.jssort101 .t {
+	position: initial;
+	top: 0;
+	left: auto;
+	width: auto;
+	height: auto;
+	border: none;
+	opacity: .6;
+	max-width: 100%;
+	max-height: 100%;
+	margin: auto;
+	right: auto;
+	}
+	
+	.p {
+	padding: 0px !important;
+	}
+	
+	.legen_box {
+	width: 41px;
+	height: 13px;
+	display: inline-block;
+	}
+	
+	.legentsG p,
+	.legentsG div {
+	margin: 1px;
+	font-size: 12px;
+	}
+	
+	.legentsG {
+	background-color: #fafafa;
+	color: #35495e;
+	margin-bottom: 10px;
+	}
+	
+	.legrow > .col-sm-2 {
+	padding-left: 5px;
+	padding-right: 5px;
+	}
+	
+	.w600 {
+	width: 600px;
+	}
+	
+	.thumbnailC {
+	max-width: 89%;
+	max-height: 130px;
+	width: auto;
+	height: auto;
+	margin: auto;
+	cursor: pointer;
+	}
+	
+	.helper {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	}
+	
+	.log-img-conatiner .gallery-img-box {
+	position: relative;
+	width: 100%;
+	height: 150px;
+	background-color: #f3f3f3;
+	text-align: center;
+	margin-bottom: 7px;
+	}
+	
+	.img-popup {
+	max-width: 100%;
+	max-height: 100%;
+	}
+	
+	#myModal-img .modal-content {
+	background-color: rgba(0, 0, 0, 0.5411764705882353);
+	}
+	
+	#myModal-img .modal-header {
+	border-bottom: none;
+	}
+	
+	.img-caption-pop {
+	padding: 5px;
+	padding-top: 13px;
+	font-size: 16px;
+	color: #fff;
+	text-align: left;
+	}
+	
+	#myModal-img .modal-header .close {
+	margin-top: -2px;
+	color: #fff;
+	opacity: 1;
+	font-size: 32px;
+	}
+	
+	
+	.flotTip {
+	/*display: none !important;*/
+	}
+	
+	/*.tickLabel {*/
+	/*max-width: 10px;*/
+	/*}*/
+	#analyticsOptionsBtn:focus {
+	color: #656565 !important;
+	}
+	
+	#analyticsOptions {
+	position: absolute;
+	right: 20px;
+	z-index: 10;
+	}
+	
+	.sidebar-analytics-options {
+	background-color: white !important;
+	color: black;
+	padding: 10px;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	}
+	
+	.page-section .prev-btn,
+	.page-section .next-btn {
+	position: absolute;
+	
+	height: 40px;
+	width: 20px;
+	line-height: 27px;
+	color: #fff;
+	text-align: center;
+	background-color: #0074B9 !important;
+	transform: translateY(-50%);
+	cursor: pointer;
+	}
+	
+	.page-section .prev-btn {
+	left: 50px;
+	padding: 8px 20px 10px 10px;
+	}
+	
+	.page-section .next-btn {
+	right: 50px;
+	padding: 8px 20px 10px 10px;
+	}
+	
+	.page-section .prev-btn.disabled {
+	cursor: unset;
+	}
+	
+	.page-section .next-btn.disabled {
+	cursor: unset;
+	}
+	
+	
+	/* 3D MODEL */
+	#toolbar {
+	/* background: rgba(42, 42, 42, 0.8); */
+	padding: 4px;
+	border-radius: 4px;
+	margin: 5px;
+	padding: 2px 5px;
+	position: relative !important;
+	/* top: 300px; */
+	}
+	
+	#toolbar input {
+	vertical-align: middle;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	}
+	
+	#toolbar .header {
+	font-weight: bold;
+	}
+	
+	.cesium-viewer-bottom {
+	display: none !important;
+	}
+	
+	.cesium-viewer-timelineContainer {
+	display: none;
+	}
+	
+	.cesium-viewer-animationContainer {
+	display: none;
+	}
+	
+	
+	.cesium-viewer-toolbar {
+	display: none;
+	}
+	
+	.explainer {
+	width: 100%;
+	padding: 20px;
+	margin: 15px;
+	display: inline-block;
+	color: black;
+	}
+	
+	.bg-gray-50 {
+	--tw-bg-opacity: 1;
+	background-color: rgb(249 250 251/var(--tw-bg-opacity));
+	}
+	
+	/* input[type=checkbox] {
+	height: 0;
+	width: 0;
+	visibility: hidden;
+	}
+	
+	label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 50px;
+	height: 30px;
+	background: grey;
+	display: inline-block;
+	border-radius: 20px;
+	position: relative;
+	
+	}
+	
+	label:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+	} */
+	
+	/* input:checked+label {
+	background: #bada55;
+	}
+	
+	input:checked+label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+	}
+	
+	label:active:after {
+	width: 130px;
+	} */
+	
+	
+	.panel-title {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 16px;
+	color: inherit;
+	width: 80%;
+	display: inline;
+	}
+	
+	
+	.dddLoading {
+	padding: 10%;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	text-align: center;
+	position: absolute;
+	top: 350px;
+	z-index: 9999;
+	max-height: 425px
+	/* margin: 15px; */
+	}
+	
+	.dddLoadingText {
+	color: white;
+	font-size: 25px;
+	text-align: center
+	}
+	
+	.map-container {
+	min-height: 400px;
+	}
+	
+	.cesium-viewer-infoBoxContainer {
+	display: none !important
+	}
+	
+	/*------ ADDED CSS ---------*/
+	
+	@keyframes shake {
+	0% {
+	transform: translate(1px, 1px) rotate(0deg);
+	
+	}
+	
+	10% {
+	transform: translate(-1px, -2px) rotate(-1deg);
+	
+	}
+	
+	20% {
+	transform: translate(-3px, 0px) rotate(1deg);
+	
+	}
+	
+	30% {
+	transform: translate(3px, 2px) rotate(0deg);
+	
+	}
+	
+	40% {
+	transform: translate(1px, -1px) rotate(1deg);
+	
+	}
+	
+	50% {
+	transform: translate(-1px, 2px) rotate(-1deg);
+	
+	}
+	
+	60% {
+	transform: translate(-3px, 1px) rotate(0deg);
+	
+	}
+	
+	70% {
+	transform: translate(3px, 1px) rotate(-1deg);
+	
+	}
+	
+	80% {
+	transform: translate(-1px, -1px) rotate(1deg);
+	
+	}
+	
+	90% {
+	+ transform: translate(1 px, 2 px) rotate(0 deg);
+	
+	}
+	
+	100% {
+	transform: translate(1px, -2px) rotate(-1deg);
+	
+	}
+	
+	
+	}
+	
+	.fc .fc-button-primary {
+	background-color: #fff !important;
+	border-color: #2563eb !important;
+	color: #2563eb !important;
+	}
+	
+	.fc .fc-toolbar-title {
+	font-size: 1.25rem !important;
+	margin: 0;
+	font-weight: 700 !important
+	}
+	
+	/*--------- END --------*/
+	</style>
+	<script src="https://app.tablogs.com/assets/js/tailwindcss.js"></script>
+
+	<script>
+	tailwind.config = {
+	theme: {
+	extend: {
+	darkMode: false,
+	
+	colors: {
+	primary: {
+	50: '#eff6ff',
+	100: '#dbeafe',
+	200: '#bfdbfe',
+	300: '#93c5fd',
+	400: '#60a5fa',
+	500: '#3b82f6',
+	600: '#2563eb',
+	700: '#1d4ed8',
+	800: '#1e40af',
+	900: '#1e3a8a',
+	},
+	},
+	},
+	fontFamily: {
+	body: [
+	'Inter',
+	'ui-sans-serif',
+	'system-ui',
+	'-apple-system',
+	'system-ui',
+	'Segoe UI',
+	'Roboto',
+	'Helvetica Neue',
+	'Arial',
+	'Noto Sans',
+	'sans-serif',
+	'Apple Color Emoji',
+	'Segoe UI Emoji',
+	'Segoe UI Symbol',
+	'Noto Color Emoji',
+	],
+	sans: [
+	'Inter',
+	'ui-sans-serif',
+	'system-ui',
+	'-apple-system',
+	'system-ui',
+	'Segoe UI',
+	'Roboto',
+	'Helvetica Neue',
+	'Arial',
+	'Noto Sans',
+	'sans-serif',
+	'Apple Color Emoji',
+	'Segoe UI Emoji',
+	'Segoe UI Symbol',
+	'Noto Color Emoji',
+	],
+	},
+	},
+	
+	};
+	</script>
+	<!-- <script type="text/javascript">
+	(function(c,l,a,r,i,t,y){
+	c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+	t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+	y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+	})(window, document, "clarity", "script", "l5jzk7lppx");
+	</script> -->
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/css/newtheme.css" id="maincss">
+	<script src="https://app.tablogs.com/assets/js/proj4js/proj4.js"></script>
+
+	
+	<!-- Start of Crisp Embed Code -->
+	<script type="text/javascript">
+	window.$crisp=[];
+	window.$crisp.push(['set', 'user:email', 'info@geoid.com.au']);
+	window.CRISP_WEBSITE_ID="0a5845a1-b0d9-4ed5-8278-1631d61c94b3";
+	window.CRISP_TOKEN_ID = '0c9acbd3-89e9-488d-b918-c7bc2693e047';
+	(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+	</script>
+	<!-- End of Crisp Embed Code -->
+	</head>
+	
+	
+	<body style="font-size: 16px">
+	<nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded ">
+	<div class="container flex flex-wrap items-center justify-between mx-auto" id="header-section-body">
+	<a href="javascript:;" class="flex items-center">
+
+	<img src="https://app.tablogs.com/assets/static-img/tablogs-logo.png" class="h-6 mr-3 sm:h-9" alt="TabLogs Logo"/>
+	
+	<span style="display: none;">Australia</span>
+	<span class="company_logo_plus">+</span>
+	<div class="company-logo">
+	<img src="https://app.tablogs.com/assets/img/logo/1655962013GEOID Logo.jpg " alt="App Logo" class="">
+	
+	</div>
+	
+	
+	</a>
+	<div class="flex items-center md:order-2">
+	<button type="button" onclick="Open_aligned_platform();"
+	class="text-white mr-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+	Support Workspace
+	</button>
+	
+	
+	
+	<button type="button" class="flex mr-3 text-sm rounded-full focus:ring-4 focus:ring-gray-300 "
+	id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
+	data-dropdown-placement="bottom">
+	<span class="sr-only">Open user menu</span>
+	<img class="w-12 h-12 rounded-full"
+	src=" https://app.tablogs.com/assets/static-img/avatar.svg "
+
+	alt="user photo">
+	
+	</button>
+	
+	<!-- Dropdown menu -->
+	<div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow "
+	id="user-dropdown">
+	<div class="px-4 py-3">
+	<span class="block text-sm text-gray-900 ">GeoID </span>
+	<span class="block text-sm font-medium text-gray-500 truncate ">info@geoid.com.au</span>
+	</div>
+	<ul class="py-2" aria-labelledby="user-menu-button">
+	<li>
+	<a type="button" href="/settings"
+
+	class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 " style="cursor: pointer">My Account</a>
+	</li>
+	<li>
+	<a href="javascript:void(0)" onclick="confirmLogout()"
+
+	class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ">Sign out</a>
+	</li>
+	</ul>
+	</div>
+	
+	<button data-collapse-toggle="mobile-menu-2" type="button"
+	class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
+	aria-controls="mobile-menu-2" aria-expanded="false">
+	<span class="sr-only">Open main menu</span>
+	<svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+	xmlns="http://www.w3.org/2000/svg">
+	<path fill-rule="evenodd"
+	d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+	clip-rule="evenodd"></path>
+	</svg>
+	</button>
+	</div>
+	<div class="items-center justify-between w-full md:flex md:w-auto md:order-1" id="mobile-menu-2">
+	
+	
+	
+	
+	<ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white ">
+	<li>
+	<a href="https://app.tablogs.com/dashboard2"
+
+	class=" text-blue-700 block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Home</a>
+	</li>
+	<li>
+	<a href="https://app.tablogs.com/jobs/job_list"
+
+	class=" text-gray-700 block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Projects</a>
+	</li>
+	<li>
+	<a href="https://app.tablogs.com/database/index"
+
+	class=" text-gray-700 block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Database</a>
+	</li>
+	
+	<li>
+	<a href="https://app.tablogs.com/clients"
+
+	class="text-gray-700 block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Clients</a>
+	</li>
+	
+	<li>
+	<a href="https://app.tablogs.com/drill_rigs"
+
+	class="text-gray-700 block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Equipment</a>
+	</li>
+	
+	<li>
+	
+	<a href="https://app.tablogs.com/timesheets"
+
+	class="text-gray-700 block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Timesheets</a>
+	</li>
+	
+	
+	<li>
+	<a href="https://app.tablogs.com/settings" class="text-gray-700 block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Settings</a>
+	</li>
+	</ul>
+	</div>
+	</div>
+	</nav>
+	<div style="background-color: #FA7F2A;font-size: 14px;text-align: center;padding: 6px;color: white;">Checkout <a href="http://beta.tablogs.com/" target="_blank">beta.tablogs.com</a> for our new desktop app | Notice: TabLogs Classic Android app will be discontinued Jan 31, download the new app now</div>
+	<div class="wrapper p-4">
+	<!-- Main section-->
+	<!-- Main section-->
+	<section>
+	<!-- Page content-->
+	<div class="content-wrapper" id="home_page_body">
+	<div class="content-heading">
+	<h3 class="mb-4 text-2xl tracking-tight font-extrabold text-gray-700 ">TabLogs Dashboard
+	- GEOID Engineering <span id="helpIntroVidDashboard"
+	class="new-video help-icon bg-yellow-400 text-yellow-100 text-sm font-semibold inline-flex items-center help_icon rounded-full ">? </span>
+	</h3>
+	
+	
+	
+	
+	
+	
+	</div>
+	
+	<div class="content-wrapper text-center">
+	
+	
+	</div>
+	<section class="blue-gradient rounded-lg p-12">
+	<div class="">
+	<dl class="grid grid-cols-1 gap-2 sm:grid-cols-4 ">
+	<div
+	class="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center bg-white"
+	>
+	<dt class="order-last text-lg font-medium text-gray-500">
+	Logs Today
+	</dt>
+	
+	<dd class="text-4xl font-extrabold text-blue-600 md:text-5xl">
+	0
+	</dd>
+	</div>
+	
+	<div
+	class="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center bg-white"
+	>
+	<dt class="order-last text-lg font-medium text-gray-500">
+	Logs This Week
+	</dt>
+	
+	<dd class="text-4xl font-extrabold text-blue-600 md:text-5xl">0</dd>
+	</div>
+	
+	<div
+	class="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center bg-white"
+	>
+	<dt class="order-last text-lg font-medium text-gray-500">
+	Logs This Month
+	</dt>
+	
+	<dd class="text-4xl font-extrabold text-blue-600 md:text-5xl">0</dd>
+	</div>
+	<div
+	class="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center bg-white"
+	>
+	<dt class="order-last text-lg font-medium text-gray-500">
+	Total Logs
+	</dt>
+	
+	<dd class="text-4xl font-extrabold text-blue-600 md:text-5xl">8967</dd>
+	</div>
+	</dl>
+	</div>
+	</section>
+	
+	<section class="mt-8">
+	<div class="row">
+	<div class="col-lg-4">
+	<div class="w-full p-2 bg-white border border-gray-200 rounded-lg shadow sm:p-4 ">
+	<div class="flex items-center justify-between mb-4">
+	<div class="mb-4 border-b border-gray-200 ">
+	<ul class="flex flex-wrap -mb-px font-large text-center" id="myTab" data-tabs-toggle="#projectsTabContent" role="tablist">
+	<li class="mr-2" role="presentation">
+	<button class="projectsTab inline-block p-4 border-b-2 rounded-t-lg text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500" 
+	data-tabs-target="#project" type="button" role="tab" aria-controls="project" aria-selected="true" >
+	Projects
+	</button>
+	</li>
+	<li class="mr-2" role="presentation">
+	<button class="projectsTab inline-block p-4 border-b-2 rounded-t-lg text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500" 
+	data-tabs-target="#recent" type="button" role="tab" aria-controls="recent" aria-selected="false" @click="viewRecentlyProject()">
+	Recently Viewed Projects
+	</button>
+	</li>
+	</ul>
+	</div>
+	<a href="https://app.tablogs.com/jobs/job_list"
+
+	class="text-sm font-medium text-blue-600 hover:underline ">
+	View all
+	</a>
+	</div>
+	<div id="projectsTabContent">
+	
+	<div class="flow-root" aria-labelledby="project" id="project" role="tabpanel">
+	
+	<form>
+	<label for="default-search"
+	class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+	<div class="relative">
+	<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+	<svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400"
+	fill="none" stroke="currentColor" viewBox="0 0 24 24"
+	xmlns="http://www.w3.org/2000/svg">
+	<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+	d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+	</svg>
+	</div>
+	<input type="search" id="search_input"
+	class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+	placeholder="Search Projects" required>
+	
+	</div>
+	</form>
+	<div style="text-align: center;">
+	<i v-if="show_spinner" class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+	</div>
+	
+	<div data-height="810" data-scrollable="" id="serch_list">
+	<ul role="list" class="divide-y divide-gray-200 ">
+	<li v-for="project in project_list" class="py-3 sm:py-4 border-b project-item job_1" style="list-style: none;">
+	<div class="flex items-center space-x-4">
+	<div class="flex-1 min-w-0"
+	style="list-style: none; cursor: pointer"
+	@click="document.location.href = '/dashboard2/job/'+project.id">
+	
+	<p class="text-sm font-medium text-gray-900 truncate e">
+	{{ project.job_no }} - {{ project.name }}
+	<span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full "
+	v-if="(project.status_name == 'Scheduled') || (project.status_name == 'Onsite works') || (project.status_name == 'Onsite works completed')">
+	<span class="w-2 h-2 mr-1 bg-green-500 rounded-full"></span>
+	{{ project.status_name }}
+	</span>
+	<span v-if="(project.status_name == 'In planning') || (project.status_name == 'To do')"
+	class="inline-flex items-center bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full ">
+	<span class="w-2 h-2 mr-1 bg-yellow-500 rounded-full"></span>
+	{{ project.status_name }}
+	</span>
+	<span v-if="(project.status_name == 'Lab testing') || (project.status_name == 'Reporting')"
+	class="inline-flex items-center bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full ">
+	<span class="w-2 h-2 mr-1 bg-blue-500 rounded-full"></span>
+	{{ project.status_name }}
+	</span>
+	<span v-if="project.status_name == 'Complete'"
+	class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full ">
+	<span class="w-2 h-2 mr-1 bg-purple-500 rounded-full"></span>
+	{{ project.status_name }}
+	</span>
+	</p>
+	<p class="text-sm text-gray-500 truncate ">
+	{{ project.location }}
+	</p>
+	<p class="text-sm text-gray-500 truncate ">
+	Last updated: {{ project.updated_time }}
+	</p>
+	</div>
+	<div class="inline-flex items-center text-base ">
+	
+	<button @click="viewProject(project.id)"
+	type="button"
+	class="no-underline px-3 py-2 text-xs font-medium text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 ">
+	View
+	</button>
+	</div>
+	</div>
+	</li>
+	</ul>
+	</div>
+	</div>
+	
+	
+	<div class="flow-root" aria-labelledby="recent" id="recent" role="tabpanel">
+	
+	<form>
+	<label for="default-search"
+	class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+	<div class="relative">
+	<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+	<svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400"
+	fill="none" stroke="currentColor" viewBox="0 0 24 24"
+	xmlns="http://www.w3.org/2000/svg">
+	<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+	d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+	</svg>
+	</div>
+	<input type="search" id="recent_search_input"
+	class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+	placeholder="Search Projects" required>
+	
+	</div>
+	</form>
+	<div style="text-align: center;">
+	<i v-if="show_spinner" class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+	</div>
+	
+	<div data-height="810" data-scrollable="" id="recent_serch_list">
+	<ul role="list" class="divide-y divide-gray-200 ">
+	<li v-for="project in recent_projects_list" class="py-3 sm:py-4 border-b recent_project-item job_1" style="list-style: none;">
+	<div class="flex items-center space-x-4">
+	<div class="flex-1 min-w-0"
+	style="list-style: none; cursor: pointer"
+	@click="document.location.href = '/dashboard2/job/'+project.id">
+	
+	<p class="text-sm font-medium text-gray-900 truncate e">
+	{{ project.job_no }} - {{ project.name }}
+	<span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full "
+	v-if="(project.status_name == 'Scheduled') || (project.status_name == 'Onsite works') || (project.status_name == 'Onsite works completed')">
+	<span class="w-2 h-2 mr-1 bg-green-500 rounded-full"></span>
+	{{ project.status_name }}
+	</span>
+	<span v-if="(project.status_name == 'In planning') || (project.status_name == 'To do')"
+	class="inline-flex items-center bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full ">
+	<span class="w-2 h-2 mr-1 bg-yellow-500 rounded-full"></span>
+	{{ project.status_name }}
+	</span>
+	<span v-if="(project.status_name == 'Lab testing') || (project.status_name == 'Reporting')"
+	class="inline-flex items-center bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full ">
+	<span class="w-2 h-2 mr-1 bg-blue-500 rounded-full"></span>
+	{{ project.status_name }}
+	
+	</span>
+	<span v-if="project.status_name == 'Complete'"
+	class="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full ">
+	<span class="w-2 h-2 mr-1 bg-purple-500 rounded-full"></span>
+	{{ project.status_name }}
+	</span>
+	</p>
+	<p class="text-sm text-gray-500 truncate ">
+	{{ project.location }}
+	</p>
+	<p class="text-sm text-gray-500 truncate ">
+	Last updated: {{ project.updated_time }}
+	</p>
+	</div>
+	<div class="inline-flex items-center text-base ">
+	
+	<button @click="viewProject(project.id)"
+	type="button"
+	class="no-underline px-3 py-2 text-xs font-medium text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 ">
+	View
+	</button>
+	</div>
+	</div>
+	</li>
+	</ul>
+	</div>
+	</div>
+	
+	</div>
+	</div>
+	</div>
+	<div class="col-lg-8" id="sub_surface_body">
+	<div class="w-fullp-2 bg-white border border-gray-200 rounded-lg shadow sm:p-4 ">
+	<div class="flex items-center justify-between mb-4">
+	<h5 class="text-xl font-bold leading-none text-gray-900 ">Project Schedule</h5>
+	<label class="relative inline-flex items-center cursor-pointer">
+	<input type="checkbox" value="true" class="sr-only peer" id="my_project_schedule"
+	@change="getMyProjectSchedule()">
+	<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+	<span class="ml-3 text-sm font-medium text-gray-900 ">My Projects</span>
+	</label>
+	</div>
+	<div class="p-4 mb-4 text-sm text-gray-800 rounded-lg bg-gray-50" role="alert">
+	The calendar lists all of the scheduled projects for your company. You can also filter
+	the projects using the toggle to view only the projects that you are a team member of.
+	The project dates in the calendar are based off the Scheduled Drilling Start and End
+	dates in the project setup page.
+	</div>
+	<div class="flow-root">
+	<div id='calendar'></div>
+	</div>
+	</div>
+	
+	</div>
+	</div>
+	</section>
+	</div>
+	</section>
+	<ul id="toast" class="toast"></ul>
+	
+	<!-- drawer init and show -->
+	<div id="loading-indicator-body" class="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-30"
+	style="display: none;z-index:9999;">
+	<div class="px-3 py-1 text-xs font-medium leading-none text-center text-blue-800 bg-blue-200 rounded-full animate-pulse dark:bg-blue-900 dark:text-blue-200"
+	style="position: absolute;left: 45%;top: 50%;width: 300px;height: 34px;font-size: 20px;">loading...
+	</div>
+	</div>
+	
+	<!-- drawer component -->
+	<!-- Page footer-->
+	
+	<footer id="footer-section-body" class="bg-white rounded-lg shadow sm:flex sm:items-center sm:justify-between p-4 sm:p-6 xl:p-8 d" style=" padding-left: 35vw;">
+	<p class="mb-4 text-sm text-right text-gray-500 sm:mb-0">
+	&copy; 2024 <a href="https://tablogs.com" class="hover:underline" target="_blank">TabLogs
+
+	Pty Ltd</a>. All rights reserved.
+	</p>
+	
+	</footer>
+	
+	</div>
+	<!-- =============== VENDOR SCRIPTS ===============-->
+	<!-- MODERNIZR-->
+	
+	
+	<script src="https://app.tablogs.com/assets/vendor/modernizr/modernizr.custom.js"></script>
+
+	<!-- MATCHMEDIA POLYFILL-->
+	<script src="https://app.tablogs.com/assets/vendor/matchMedia/matchMedia.js"></script>
+
+	<!-- JQUERY-->
+	<script src="https://app.tablogs.com/assets/vendor/jquery/dist/jquery.js"></script>
+
+	<!-- BOOTSTRAP-->
+	<script src="https://app.tablogs.com/assets/vendor/bootstrap/dist/js/bootstrap.js"></script>
+
+	<!-- STORAGE API-->
+	<script src="https://app.tablogs.com/assets/vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
+
+	<!-- JQUERY EASING-->
+	<script src="https://app.tablogs.com/assets/vendor/jquery.easing/js/jquery.easing.js"></script>
+
+	<!-- ANIMO-->
+	<script src="https://app.tablogs.com/assets/vendor/animo.js/animo.js"></script>
+
+	<!-- SLIMSCROLL-->
+	<script src="https://app.tablogs.com/assets/vendor/slimScroll/jquery.slimscroll.min.js"></script>
+
+	<!-- SCREENFULL-->
+	<script src="https://app.tablogs.com/assets/vendor/screenfull/dist/screenfull.js"></script>
+
+	<!-- LOCALIZE-->
+	<script src="https://app.tablogs.com/assets/vendor/jquery-localize-i18n/dist/jquery.localize.js"></script>
+
+	<!-- RTL demo-->
+	<script src="https://app.tablogs.com/assets/js/demo/demo-rtl.js"></script>
+
+	<!-- =============== PAGE VENDOR SCRIPTS ===============-->
+	
+	<!-- SPARKLINE-->
+	<script src="https://app.tablogs.com/assets/vendor/sparkline/index.js"></script>
+
+	<!-- FLOT CHART-->
+	<script src="https://app.tablogs.com/assets/vendor/Flot/jquery.flot.js"></script>
+
+	<script src="https://app.tablogs.com/assets/vendor/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+
+	<script src="https://app.tablogs.com/assets/vendor/Flot/jquery.flot.resize.js"></script>
+
+	<script src="https://app.tablogs.com/assets/vendor/Flot/jquery.flot.pie.js"></script>
+
+	<script src="https://app.tablogs.com/assets/vendor/Flot/jquery.flot.time.js"></script>
+
+	<script src="https://app.tablogs.com/assets/vendor/Flot/jquery.flot.categories.js"></script>
+
+	<script src="https://app.tablogs.com/assets/vendor/flot-spline/js/jquery.flot.spline.min.js"></script>
+
+	<!-- DATATABLES-->
+	<script src="https://app.tablogs.com/assets/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+	<script src="https://app.tablogs.com/assets/vendor/datatables-colvis/js/dataTables.colVis.js"></script>
+
+	<script src="https://app.tablogs.com/assets/vendor/datatables/media/js/dataTables.bootstrap.js"></script>
+	<script src="https://app.tablogs.com/assets/vendor/datatables-buttons/js/dataTables.buttons.js"></script>
+
+	<script src="https://app.tablogs.com/assets/vendor/datatables-buttons/js/buttons.bootstrap.js"></script>
+
+	<script src="https://app.tablogs.com/assets/vendor/datatables-buttons/js/buttons.colVis.js"></script>
+
+	<script src="https://app.tablogs.com/assets/vendor/datatables-buttons/js/buttons.flash.js"></script>
+
+	<script src="https://app.tablogs.com/assets/vendor/datatables-buttons/js/buttons.html5.js"></script>
+
+	<script src="https://app.tablogs.com/assets/vendor/datatables-buttons/js/buttons.print.js"></script>
+
+	<script src="https://app.tablogs.com/assets/vendor/datatables-responsive/js/dataTables.responsive.js"></script>
+
+	<script src="https://app.tablogs.com/assets/vendor/datatables-responsive/js/responsive.bootstrap.js"></script>
+
+	<script src="https://app.tablogs.com/assets/js/demo/demo-datatable.js?v=1.2"></script>
+
+	<!-- CLASSY LOADER-->
+	<script src="https://app.tablogs.com/assets/vendor/jquery-classyloader/js/jquery.classyloader.min.js"></script>
+
+	<!-- FILESTYLE-->
+	<script src="https://app.tablogs.com/assets/vendor/bootstrap-filestyle/src/bootstrap-filestyle.js"></script>
+
+	
+	<!-- CHOSEN-->
+	<script src="https://app.tablogs.com/assets/vendor/chosen_v1.2.0/chosen.jquery.min.js"></script>
+
+	<!-- SLIDER CTRL-->
+	<script src="https://app.tablogs.com/assets/vendor/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+
+	<!-- INPUT MASK-->
+	<script src="https://app.tablogs.com/assets/vendor/jquery.inputmask/dist/jquery.inputmask.bundle.js"></script>
+
+	<!-- WYSIWYG-->
+	<script src="https://app.tablogs.com/assets/vendor/bootstrap-wysiwyg/bootstrap-wysiwyg.js"></script>
+
+	<script src="https://app.tablogs.com/assets/vendor/bootstrap-wysiwyg/external/jquery.hotkeys.js"></script>
+
+	<!-- MOMENT JS-->
+	<script src="https://app.tablogs.com/assets/vendor/moment/min/moment-with-locales.min.js"></script>
+
+	<!-- DATETIMEPICKER-->
+	
+	
+	<script src="https://app.tablogs.com/assets/js/cdn-js/jquery.datetimepicker.full.min.js"></script>
+
+	<!-- COLORPICKER-->
+	<script type="text/javascript"
+	src="https://app.tablogs.com/assets/vendor/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js"></script>
+
+	<!-- SPARKLINE-->
+	<script src="https://app.tablogs.com/assets/vendor/sparkline/index.js"></script>
+
+	<!-- SELECT2-->
+	<script src="https://app.tablogs.com/assets/vendor/select2/dist/js/select2.js"></script>
+
+	<!-- SWEET ALERT-->
+	<script src="https://app.tablogs.com/assets/vendor/sweetalert/dist/sweetalert.min.js"></script>
+
+	<script src="https://app.tablogs.com/assets/vendor/sweetalert2/sweetalert2.min.js"></script>
+
+	
+	
+	<!-- SKYCONS-->
+	<script src="https://app.tablogs.com/assets/vendor/skycons/skycons.js"></script>
+
+	<!-- DEMO-->
+	<script src="https://app.tablogs.com/assets/js/demo/demo-flot.js"></script>
+
+	<script src="https://app.tablogs.com/assets/js/demo/demo-forms.js"></script>
+
+	
+	<script src="https://app.tablogs.com/assets/js/toastr.min.js"></script>
+
+	<script src="https://app.tablogs.com/assets/js/intro.min.js"></script>
+
+	<!-- =============== APP SCRIPTS ===============-->
+	<script src="https://app.tablogs.com/assets/js/app.js"></script>
+
+	<script src="https://app.tablogs.com/assets/js/app_intro.js"></script>
+
+	<script src="https://app.tablogs.com/assets/js/app_review.js"></script>
+
+	
+	<script src="https://app.tablogs.com/assets/js/flowbite.min.js"></script>
+
+	<script src="https://app.tablogs.com/assets/js/cdn-js/datepicker.min.js"></script>
+
+	
+	<script type="text/javascript">
+	$('#introVidTemplate').on('hidden.bs.modal', function() {
+	var memory = $(this).html();
+	$(this).html(memory);
+	});
+	$('#datetimepicker1').datetimepicker({
+	format: 'DD/MM/YYYY', // 改为变量，unit对应格式 "DD/MM/YYYY"
+	});
+	$('#datetimepicker_time').datetimepicker({
+	});
+	$('#datetimepicker_core_time_start').datetimepicker({
+	format: 'Y-m-d H:i'
+	});
+	$('#datetimepicker_core_time_end').datetimepicker({
+	format: 'Y-m-d H:i'
+	});
+	$('#datetimepicker_log_start').datetimepicker({
+	
+	format: 'Y-m-d H:i'
+	});
+	$('#datetimepicker_log_complete').datetimepicker({
+	
+	format: 'Y-m-d H:i'
+	});
+	
+	$(function() {
+	var version = 'v5.9.24';
+	if ('1' === 0) {
+	
+	return false;
+	} else if ('1' === 1) { // After user onboarding is done
+	if ('3176' === 1) {
+	return false;
+	}
+	}
+	if (localStorage.getItem('version') === 104 +version) {
+	return false;
+	}
+	toastr.options = {
+	'closeButton': true,
+	'closeButton1': true,
+	'debug': false,
+	'newestOnTop': false,
+	'progressBar': false,
+	'positionClass': 'toast-bottom-left',
+	'preventDuplicates': false,
+	'showDuration': '0',
+	'hideDuration': '0',
+	'timeOut': '0',
+	'extendedTimeOut': '0',
+	'showEasing': 'swing',
+	'hideEasing': 'linear',
+	'showMethod': 'fadeIn',
+	'hideMethod': 'fadeOut',
+	'iconClass': '',
+	
+	'onCloseClick': function() {
+	localStorage.setItem('version', 104 +version);
+	},
+	'onShown': function() {
+	$(this).on('click', 'div', function(e) {
+	e.stopPropagation();
+	});
+	},
+	};
+	// toastr["info"](
+	// "<h4></h4>" +
+	// "<div> <img src='assets/img/feature2.gif' style = 'width: 100%' alt=''>Our most recent updates include:</div>" +
+	// "&nbsp;" +
+	// "<ul>" +
+	// "<li>Choose your preferred header and footer styles.</li>" +
+	// "<li>Upload your CPT results and present as a bar graph or X-Y scatter plot.</li>" +
+	// "<li>Static sample and testing columns toggle.</li>" +
+	// "<li>Choose your preferred moisture logging terminology.</li>" +
+	// "<li>Display anything from pH to CPT results as a chart column.</li>" +
+	// "</ul>" +
+	// "<button type='button' onclick = 'ClickEvent()' id = 'lrnmore' class='btn btn-xs' style='margin-top: 20px; margin-bottom: 15px;'>Learn More</button>"
+	
+	// );
+	});
+	
+	function confirmLogout() {
+	let toastDetails = {
+	type: 'confirm',
+	message: "Logout?",
+	timerEnabled: false,
+	timer: 3000,
+	confirmAction: `logout()`,
+	confirmType: 'function',
+	};
+	createToast(toastDetails);
+	
+	}
+	function logout() {
+	if(window.$crisp){
+	// Execute this sequence when your users are logging out
+	window.CRISP_TOKEN_ID = null; // 1. Clear the token value
+	window.$crisp.push(["do", "session:reset"]); // 2. Unbind the current session
+	}
+	window.location.href = 'https://app.tablogs.com/login/logout';
+	}
+	function ClickEvent() {
+	window.open('https://bit.ly/3zYqB8Z');
+	}
+	
+	function Open_aligned_platform() {
+	window.open('https://support-workspace.tablogs.com/room/63a0ef92b239661aabb27d75');
+	}
+	
+	function showMasterPassword() {
+	$.ajax({
+	url: 'https://app.tablogs.com/admin/master_password/generate_master_password',
+	type: 'GET',
+	dataType: 'json',
+	}).done(function(data) {
+	if (data.success) {
+	let toastDetails = {
+	type: 'showMasterPassword',
+	message: data.data,
+	timerEnabled: false,
+	confirmType: 'close',
+	};
+	createToast(toastDetails);
+	} else {
+	openToast("warning", data.message);
+	}
+	});
+	}
+	
+	</script>
+	
+	<script src="https://app.tablogs.com/assets/js/jquery-ui/jquery-ui.js"></script>
+
+	<script src="https://app.tablogs.com/assets/js/menu_reorder.js"></script>
+
+	<script src="https://app.tablogs.com/assets/js/vue.min.js" type="text/javascript"></script>
+
+	
+	<script src='https://app.tablogs.com/assets/js/cdn-js/fullcalendar@6.1.4/index.global.min.js'></script>
+
+	<script src="https://app.tablogs.com/assets/js/vue.min.js" type="text/javascript"></script>
+
+	
+	<script>
+	$('#introVid').on('hidden.bs.modal', function() {
+	var memory = $(this).html();
+	$(this).html(memory);
+	});
+	
+	$(document).ready(function() {
+	var timeout = null;
+	$('#search_input, #recent_search_input').on('keydown', function(event) {
+	if (event.keyCode === 13) {
+	event.preventDefault();
+	return false;
+	}
+	});
+	$('#search_input').on('keyup', function() {
+	var value = $(this).val().toLowerCase();
+	// avoid continuous keyup triggers 
+	if (timeout) {
+	clearTimeout(timeout);
+	}
+	timeout = setTimeout(function() {
+	dashboardPage.loadProjectData(15, value);
+	}, 500);
+	});
+	$('#recent_search_input').on('keyup', function() {
+	var value = $(this).val().toLowerCase();
+	$('#recent_serch_list .recent_project-item').filter(function() {
+	$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+	});
+	});
+	});
+	
+	dashboardPage = new Vue({
+	el: '#home_page_body',
+	data: {
+	logsData: [],
+	logs_count: 0,
+	currrentSubSurfacePage: 1,
+	logs_count_one_page: 20,
+	job_id: '53923',
+	show3d: true,
+	globe: '',
+	viewModel: '',
+	borehole: {},
+	viewer: '',
+	boreholes: [],
+	geologyLayers: [],
+	showGeologicalMap: false,
+	unitType: 'Metric',
+	labelData: [],
+	isLoading: true,
+	geologicalData: null,
+	invalidBoreholes: [],
+	jobSelectedId: '53923',
+	project_list: [],
+	project_status_list: [],
+	recent_projects_list: [],
+	events: [],
+	show_spinner: true,
+	projectTab: 'recent',
+	},
+	
+	/**
+	* 在挂载后即开始执行
+	*/
+	async mounted() {
+	this.loadProjectData();
+	this.loadProjectScheduleData('false');
+	
+	},
+	
+	methods: {
+	loadProjectData(length = 15, search = '', is_recently = false, ids = []) {
+	var that = this;
+	$.ajax({
+	url: 'https://app.tablogs.com/jobs/getProjectList',
+	type: 'POST',
+	dataType: 'json',
+	data: {
+	start: 0,
+	length: length,
+	search: {value: search},
+	ids: ids
+	},
+	}).done(function(data) {
+	if (data.status == 'error') {
+	openToast('warning', data.msg);
+	} else {
+	that.show_spinner = false;
+	that.project_status_list = data.project_status_list;
+	
+	var projects = data.data.map(item => {
+	return {
+	...item,
+	updated_time: item.updated_at ? moment(item.updated_at).format(data.unit === 'Imperial' ? 'MM/DD/YYYY HH:mm:ss A' : 'DD/MM/YYYY HH:mm:ss A') : '',
+	status_name: that.getProjectStatusById(item.job_status)
+	};
+	});
+	
+	// for recently view tab
+	if (is_recently) {
+	that.recent_projects_list = projects;
+	} else {
+	that.project_list = projects;
+	}
+	}
+	});
+	
+	},
+	getProjectStatusById(id) {
+	var statusFiltered = id ? this.project_status_list.find(i => i.id == id) : null;
+	return statusFiltered?.name;
+	},
+	viewRecentlyProject() {
+	this.loadProjectData(recentProjects.length, '', true, recentProjects);
+	},
+	loadProjectScheduleData(my_project) {
+	var that = this;
+	$.ajax({
+	url: 'https://app.tablogs.com/dashboard2/get_project_schedule',
+	type: 'POST',
+	dataType: 'json',
+	data: {my_project: my_project},
+	}).done(function(data) {
+	if (data.status == 'error') {
+	openToast('warning', data.msg);
+	} else {
+	that.events = data.data;
+	var calendarEl = document.getElementById('calendar');
+	var calendar = new FullCalendar.Calendar(calendarEl, {
+	initialView: 'dayGridMonth',
+	events: that.events,
+	});
+	
+	calendar.render();
+	}
+	});
+	
+	},
+	getMyProjectSchedule() {
+	var myProject = $('#my_project_schedule:checked').val() ? 'true' : 'false';
+	this.loadProjectScheduleData(myProject);
+	},
+	
+	viewProject(projectId)
+	{
+	checkRecentProjects(projectId);
+	document.location.href = '/jobs/setup/'+projectId;
+	}
+	},
+	
+	});
+	</script>
+	
+	
+	<script type="text/javascript">
+	function setPageTitle_ContentHeading() {
+	var t = document.title;
+	var i = document.getElementsByClassName('content-heading').length;
+	if (t == 'TabLogs' && i > 0) {
+	return t + ' - ' + document.getElementsByClassName('content-heading')[0].innerText;
+	} else {
+	return t;
+	}
+	}
+	
+	document.addEventListener('DOMContentLoaded', function(event) {
+	document.title = setPageTitle_ContentHeading();
+	});
+	
+	var recentProjects = JSON.parse(localStorage.getItem('recentProjects')) || [];
+	
+	function checkRecentProjects(projectId)
+	{
+	//localStorage.removeItem('recentProjects');
+	let index = recentProjects.indexOf(projectId)
+	if (recentProjects === null || index === -1) {
+	addToRecentProjects(projectId);
+	} else if (index !== -1) {
+	shiftRecentProjects(projectId);
+	}
+	}
+	
+	function addToRecentProjects(projectId)
+	{
+	recentProjects.unshift(projectId);
+	recentProjects.splice(10, 1);
+	localStorage.setItem('recentProjects', JSON.stringify(recentProjects));
+	}
+	
+	function shiftRecentProjects(projectId)
+	{
+	recentProjects = recentProjects.filter(id => {
+	return id !== projectId;
+	});
+	addToRecentProjects(projectId);
+	}
+	
+	const notifications = document.querySelector('.toast'),
+	buttons = document.querySelectorAll('.buttons .btn');
+	// Object containing details for different types of toasts
+	const toast = document.createElement('li'); // Creating a new 'li' element for the toast
+	var toastData;
+	const removeToast = (toast) => {
+	toast.classList.add('hide');
+	if (toast.timeoutId) clearTimeout(toast.timeoutId); // Clearing the timeout for the toast
+	setTimeout(() => toast.remove(), 500); // Removing the toast after 500ms
+	};
+	
+	function createToast(toastDetails) {
+	// Getting the icon and text for the toast based on the id passed
+	// const { icon, text } = toastDetails;
+	// toast.className = `toast ${id}`; // Setting the classes for the toast
+	// // Setting the inner HTML for the toast
+	if (toastDetails.type === 'delete') {
+	toast.innerHTML = `<div id="deleteModal" tabindex="-1" class=" toast-container overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full" style="z-index: 1101;">
+	<div class="toast-content relative p-4 w-full max-w-md h-full md:h-auto">
+	<div class="relative p-4 text-center bg-white rounded-lg shadow sm:p-5" style="min-width: 200px;">
+	<button type="button" onclick="dismissToast(toast)" class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center " >
+	<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+	<span class="sr-only">Close modal</span>
+	</button>
+	<svg class="text-gray-400 dark:text-gray-500 w-11 h-11 mb-3.5 mx-auto" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+	<p class="mb-4 text-lg font-semibold text-gray-900 ">${toastDetails.message}</p>
+	<div class="flex justify-center items-center space-x-4">
+	<button type="button" onclick="dismissToast(toast)" class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10 ">
+	No, cancel
+	</button>
+	<button type="submit" onclick="confirmAction(toast, '${toastDetails.confirmAction}', '${toastDetails.confirmType}')" class="py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300" >
+	Yes, I'm sure
+	</button>
+	</div>
+	</div>
+	</div>
+	</div>`;
+	
+	} else if (toastDetails.type === 'success') {
+	toast.innerHTML = `
+	<div id="successModal" tabindex="-1" class=" toast-container overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full" style="z-index: 1101;">
+	<div class="toast-content relative p-4 w-full max-w-md h-full md:h-auto">
+	<div class="relative p-4 text-center bg-white rounded-lg shadow sm:p-5" style="min-width: 200px;">
+	<button type="button" onclick="dismissToast(toast)" class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center " data-modal-toggle="successModal">
+	<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+	<span class="sr-only">Close modal</span>
+	</button>
+	<div class="w-12 h-12 rounded-full bg-green-100 p-2 flex items-center justify-center mx-auto mb-3.5">
+	<svg aria-hidden="true" class="w-8 h-8 text-green-500 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+	<span class="sr-only">Success</span>
+	</div>
+	<p class="mb-4 text-lg font-semibold text-gray-900">${toastDetails.message}</p>
+	<button data-modal-toggle="successModal" type="button" onclick="confirmAction(toast, '${toastDetails.confirmAction}', '${toastDetails.confirmType}')" class="py-2 px-3 text-sm font-medium text-center text-white rounded-lg bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 ">
+	Continue
+	</button>
+	</div>
+	</div>
+	</div>
+	`;
+	} else if (toastDetails.type === 'warning') {
+	toast.innerHTML = `
+	<div id="successModal" tabindex="-1" class=" toast-container overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full" style="z-index: 1101;">
+	<div class="toast-content relative p-4 w-full max-w-md h-full md:h-auto">
+	<div class="relative p-4 text-center bg-white rounded-lg shadow sm:p-5" style="min-width: 200px;">
+	<button type="button" onclick="dismissToast(toast)" class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center " data-modal-toggle="successModal">
+	<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+	<span class="sr-only">Close modal</span>
+	</button>
+	<div class="w-12 h-12 rounded-full bg-yellow-100 p-2 flex items-center justify-center mx-auto mb-3.5">
+	<svg fill="none" class="text-yellow-500" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"></path>
+	</svg>
+	<span class="sr-only">Success</span>
+	</div>
+	<p class="mb-4 text-lg font-semibold text-gray-900 ">${toastDetails.message}</p>
+	<div class="flex justify-center items-center space-x-4">
+	<button type="button" onclick="dismissToast(toast)" class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10 ">
+	Close
+	</button>
+	</div>
+	</div>
+	</div>
+	</div>
+	`;
+	} else if (toastDetails.type === 'confirm') {
+	toast.innerHTML = `
+	<div id="successModal" tabindex="-1" class=" toast-container overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full" style="z-index: 1101;">
+	<div class="toast-content relative p-4 w-full max-w-md h-full md:h-auto">
+	<div class="relative p-4 text-center bg-white rounded-lg shadow sm:p-5" style="min-width: 200px;">
+	<button type="button" onclick="dismissToast(toast)" class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center " data-modal-toggle="successModal">
+	<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+	<span class="sr-only">Close modal</span>
+	</button>
+	<div class="w-12 h-12 rounded-full bg-yellow-100 p-2 flex items-center justify-center mx-auto mb-3.5">
+	<svg fill="none" class="text-yellow-500" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"></path>
+	</svg>
+	<span class="sr-only">Success</span>
+	</div>
+	<p class="mb-4 text-lg font-semibold text-gray-900 ">${toastDetails.message}</p>
+	<div class="flex justify-center items-center space-x-4">
+	<button type="button" onclick="dismissToast(toast, '${toastDetails.revertAction}')" class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10 ">
+	No, cancel
+	</button>
+	<button type="submit" onclick="confirmAction(toast, '${toastDetails.confirmAction}', '${toastDetails.confirmType}')" class="py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300" >
+	Yes, I'm sure
+	</button>
+	</div>
+	</div>
+	</div>
+	</div>
+	`;
+	} else if (toastDetails.type === 'confirm-input') {
+	toast.innerHTML = `
+	<div id="successModal" tabindex="-1" class=" toast-container overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full" style="z-index: 1101;">
+	<div class="toast-content relative p-4 w-full max-w-md h-full md:h-auto">
+	<div class="relative p-4 text-center bg-white rounded-lg shadow sm:p-5" style="min-width: 200px;">
+	<button type="button" onclick="dismissToast(toast)" class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center " data-modal-toggle="successModal">
+	<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+	<span class="sr-only">Close modal</span>
+	</button>
+	<div class="w-12 h-12 rounded-full bg-yellow-100 p-2 flex items-center justify-center mx-auto mb-3.5">
+	<svg fill="none" class="text-yellow-500" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"></path>
+	</svg>
+	<span class="sr-only">Success</span>
+	</div>
+	<p class="mb-4 text-lg font-semibold text-gray-900 ">${toastDetails.message}</p>
+	<input id="${toastDetails.inputId}" type="text" placeholder="Depth" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+	<br>
+	<div class="flex justify-center items-center space-x-4">
+	<button type="button" onclick="dismissToast(toast)" class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10 ">
+	No, cancel
+	</button>
+	<button type="submit" onclick="confirmAction(toast, '${toastDetails.confirmAction}', '${toastDetails.confirmType}')" class="py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300" >
+	Yes, I'm sure
+	</button>
+	</div>
+	</div>
+	</div>
+	</div>
+	`;
+	} else if (toastDetails.type === 'confirm-select') {
+	toast.innerHTML = `
+	<div id="successModal" tabindex="-1" class=" toast-container overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full" style="z-index: 1101;">
+	<div class="toast-content relative p-4 w-full max-w-md h-full md:h-auto">
+	<div class="relative p-4 text-center bg-white rounded-lg shadow sm:p-5" style="min-width: 200px;">
+	<button type="button" onclick="dismissToast(toast)" class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center " data-modal-toggle="successModal">
+	<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+	<span class="sr-only">Close modal</span>
+	</button>
+	<div class="w-12 h-12 rounded-full bg-yellow-100 p-2 flex items-center justify-center mx-auto mb-3.5">
+	<svg fill="none" class="text-yellow-500" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"></path>
+	</svg>
+	<span class="sr-only">Success</span>
+	</div>
+	<p class="mb-4 text-lg font-semibold text-gray-900 ">${toastDetails.message}</p>
+	<select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 ${toastDetails.selectId}" id="select2-3">
+	<option value="">Select</option>
+	${toastDetails.all_options}
+	</select>
+	<br>
+	<div class="flex justify-center items-center space-x-4">
+	<button type="button" onclick="dismissToast(toast)" class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10 ">
+	No, cancel
+	</button>
+	<button type="submit" onclick="confirmAction(toast, '${toastDetails.confirmAction}', '${toastDetails.confirmType}')" class="py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300" >
+	Yes, I'm sure
+	</button>
+	</div>
+	</div>
+	</div>
+	</div>
+	`;
+	} else if (toastDetails.type === 'confirm-input-two') {
+	toast.innerHTML = `
+	<div id="successModal" tabindex="-1" class=" toast-container overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full" style="z-index: 1101;">
+	<div class="toast-content relative p-4 w-full max-w-md h-full md:h-auto">
+	<div class="relative p-4 text-center bg-white rounded-lg shadow sm:p-5" style="min-width: 200px;">
+	<button type="button" onclick="dismissToast(toast)" class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center " data-modal-toggle="successModal">
+	<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+	<span class="sr-only">Close modal</span>
+	</button>
+	<div class="w-12 h-12 rounded-full bg-yellow-100 p-2 flex items-center justify-center mx-auto mb-3.5">
+	<svg fill="none" class="text-yellow-500" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"></path>
+	</svg>
+	<span class="sr-only">Success</span>
+	</div>
+	<p class="mb-4 text-lg font-semibold text-gray-900 ">${toastDetails.message}</p>
+	<input id="${toastDetails.inputId}" type="text" placeholder="From Depth" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+	<br>
+	<input id="${toastDetails.inputId02}" type="text" placeholder="To Depth" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+	<br>
+	<div class="flex justify-center items-center space-x-4">
+	<button type="button" onclick="dismissToast(toast)" class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10 ">
+	No, cancel
+	</button>
+	<button type="submit" onclick="confirmAction(toast, '${toastDetails.confirmAction}', '${toastDetails.confirmType}')" class="py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300" >
+	Yes, I'm sure
+	</button>
+	</div>
+	</div>
+	</div>
+	</div>
+	`;
+	} else if (toastDetails.type === 'custom') {
+	toast.innerHTML = `
+	<div id="successModal" tabindex="-1" class=" toast-container overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full" style="z-index: 1101;">
+	<div class="toast-content relative p-4 w-full max-w-md h-full md:h-auto">
+	<div class="relative p-4 text-center bg-white rounded-lg shadow sm:p-5" style="min-width: 200px;">
+	<button type="button" onclick="dismissToast(toast)" class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center " data-modal-toggle="successModal">
+	<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+	<span class="sr-only">Close modal</span>
+	</button>
+	<div class="w-12 h-12 rounded-full bg-yellow-100 p-2 flex items-center justify-center mx-auto mb-3.5">
+	<svg fill="none" class="text-yellow-500" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"></path>
+	</svg>
+	<span class="sr-only">Success</span>
+	</div>
+	<p class="mb-4 text-lg font-semibold text-gray-900 ">${toastDetails.message}.</p>
+	<div class="flex justify-center items-center space-x-4">
+	<button type="button" onclick="confirmAction(toast, '${toastDetails.cancelAction}', '${toastDetails.confirmType}')" class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10 ">
+	${toastDetails.cancelButtonText}
+	</button>
+	<button type="submit" onclick="confirmAction(toast, '${toastDetails.confirmAction}', '${toastDetails.confirmType}')" class="py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300" >
+	${toastDetails.confirmButtonText}
+	</button>
+	</div>
+	</div>
+	</div>
+	</div>
+	`;
+	} else if(toastDetails.type === "showMasterPassword") {
+	toast.innerHTML = `
+	<div id="successModal" tabindex="-1" class=" toast-container overflow-y-auto overflow-x-hidden fixed z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full" style="z-index: 1101;">
+	<div class="toast-content relative p-4 w-full max-w-md h-full md:h-auto">
+	<div class="relative p-4 text-center bg-white rounded-lg shadow sm:p-5" style="min-width: 200px;">
+	<button type="button" onclick="dismissToast(toast)" class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center " data-modal-toggle="successModal">
+	<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+	<span class="sr-only">Close modal</span>
+	</button>
+	<div class="w-12 h-12 rounded-full bg-yellow-100 p-2 flex items-center justify-center mx-auto mb-3.5">
+	<svg fill="none" class="text-yellow-500" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"></path>
+	</svg>
+	<span class="sr-only">Success</span>
+	</div>
+	<p class="mb-4 text-lg font-semibold text-gray-900 ">${toastDetails.message}</p>
+	<div class="flex justify-center items-center space-x-4">
+	<button type="button" onclick="dismissToast(toast)" class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10 ">
+	Close
+	</button>
+	</div>
+	</div>
+	</div>
+	</div>
+	`;
+	}
+	// toast.show()
+	toast.classList.remove('hide');
+	toast.classList.add('show');
+	// notifications = document.querySelector(".toast"),
+	notifications.appendChild(toast); // Append the toast to the notification ul
+	// Setting a timeout to remove the toast after the specified duration
+	if(toastDetails.timerEnabled && toastDetails.type === 'success'){
+	toast.timeoutId = setTimeout(() => removeToast(toast), toastDetails.timer);
+	if (toastDetails.confirmAction) {
+	confirmAction(toast, toastDetails.confirmAction, toastDetails.confirmType)
+	}
+	}
+	
+	}
+	
+	function dismissToast(toast, action = null) {
+	if (action !== null) {
+	new Function(action)();
+	}
+	
+	toast.classList.add('hide');
+	toast.remove();
+	}
+	
+	function confirmAction(toast, action, actionType) {
+	disableButton();
+	if (action && actionType === 'url') {
+	window.location.href = action;
+	}
+	if (action && actionType === 'function') {
+	new Function(action)();
+	toast.remove()
+	}
+	if (actionType === 'close') {
+	toast.classList.add('hide');
+	toast.remove();
+	}
+	}
+	
+	//disables Delete Button
+	function disableButton() {
+	let modal = document.querySelector('#deleteModal');
+	
+	if (modal) {
+	modal.querySelector('button[type=submit]').disabled = true;
+	}
+	}
+	
+	function saveProfile() {
+	event.preventDefault();
+	var form = document.getElementById('form-user-profile');
+	var fdata = new FormData(form);
+	$.ajax({
+	url: 'https://app.tablogs.com/settings2/update_profile',
+	type: 'POST',
+	dataType: 'json',
+	data: fdata,
+	processData: false,
+	contentType: false,
+	}).done(function(data) {
+	if (data.status == 'error') {
+	openToast("warning",data.msg);
+	$('.update_loading').html('');
+	} else {
+	openToast("success",data.msg);
+	window.location.reload();
+	}
+	});
+	};
+	function profile_avatar_change() {
+	var file, img;
+	
+	if ((file = $('#user-pic-photo')[0].files[0] )) {
+	var _URL = window.URL || window.webkitURL;
+	img = new Image();
+	img.src = _URL.createObjectURL(file);
+	$('.avatar-image-body').attr('src', img.src);
+	}
+	};
+	$('#form-pwd').submit(function(event) {
+	/* Act on the event */
+	event.preventDefault();
+	$.ajax({
+	url: 'https://app.tablogs.com/settings2/update_password',
+	type: 'POST',
+	dataType: 'json',
+	data: $('#form-pwd').serialize(),
+	}).done(function(data) {
+	if (data.status == 'error') {
+	$('#alertshow').show();
+	$('#msgerr').html(data.msg);
+	} else {
+	$('#form-pwd')[0].reset();
+	openToast("success",data.msg);
+	$('#alertshow').hide();
+	$('#msgerr').html('');
+	}
+	});
+	
+	});
+	$('#form-communication-preferences').submit(function(event) {
+	/* Act on the event */
+	event.preventDefault();
+	$.ajax({
+	url: 'https://app.tablogs.com/settings2/update_communication_preferences',
+	type: 'POST',
+	dataType: 'json',
+	data: $('#form-communication-preferences').serialize(),
+	}).done(function(data) {
+	if (data.status == 'error') {
+	openToast("warning", data.msg);
+	} else {
+	openToast("success", data.msg);
+	window.location.reload();
+	}
+	});
+	
+	});
+	function openToast($type,$message,$timer=750){
+	if ($type == "success") {
+	let toastDetails = {
+	type: 'success',
+	message: $message,
+	timerEnabled: true,
+	timer: $timer,
+	confirmAction: "",
+	confirmType: 'close',
+	};
+	createToast(toastDetails);
+	} else if ($type == "warning") {
+	let toastDetails = {
+	type: 'warning',
+	message: $message,
+	timerEnabled: true,
+	timer: $timer,
+	confirmAction: "",
+	confirmType: 'close',
+	};
+	createToast(toastDetails);
+	}
+	
+	}
+	</script>
+	<div id="introVidPdfTemplate" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidPdfTemplate')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Log templates</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	</div>
+	</div>
+	
+	<div id="introVidRemarks" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidRemarks')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Remarks</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	</div>
+	</div>
+	
+	<div id="introVidWellDiagram" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidWellDiagram')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white"> Well Logs</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	
+	<div id="introVidCorePhotos" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidCorePhotos')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white"> Core Photos Overview</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	
+	<div id="introVidLaboratoryTesting" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidLaboratoryTesting')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white"> Laboratory Testing Overview</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	</div>
+	</div>
+	
+	<div id="introVidPhotoLogs" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidPhotoLogs')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Photo logs</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	
+	</div>
+	
+	</div>
+	</div>
+	
+	<div id="introVidCoreDefects" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidCoreDefects')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Core Log</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	
+	<div id="introVidRQD" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidRQD')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white"> RQD and TCR Overview</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div id="introVidLogPreferences" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidLogPreferences')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white"> Log Preferences Overview</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	
+	</div>
+	
+	</div>
+	</div>
+	
+	<div id="introVidSitePlan" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidSitePlan')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white"> Project site plan</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	<div id="introVidModifyMenus" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidModifyMenus')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="modal-title">How to Modify Menus</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	
+	</div>
+	
+	</div>
+	</div>
+	
+	<div id="introVidCopyCopySubSurface" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidCopyCopySubSurface')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="modal-title">Subsurfaces</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	</div>
+	</div>
+	
+	
+	<div id="introVidCopyLog"
+	class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidCopyLog')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">How to Copy a Log
+	</h4>
+	</div>
+	<iframe width="598" height="315" src=""
+	title="YouTube video player" frameborder="0"
+	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+	allowfullscreen></iframe>
+	</div>
+	</div>
+	</div>
+	<div id="introVidDashboard" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidDashboard')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Desktop application</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	<div id="introVidManageProject" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidManageProject')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Manage Projects</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	<div id="introVidProjectOverview" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidProjectOverview')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Project Overview</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	<div id="introVidManageClient" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidManageClient')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Manage Clients</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	<div id="introVidManageStaff" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidManageStaff')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Manage Staff</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	<div id="introVidManageDrillRigs" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidManageDrillRigs')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Manage Drill Rigs</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	<div id="introVidManageExcavators" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidManageExcavators')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Manage Excavators</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	<div id="introVidManageTimesheets" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidManageTimesheets')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Manage Timesheets</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	<div id="introVidManageLogPreferences" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidManageLogPreferences')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Log preferences</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	<div id="introVidProjectLogs" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidProjectLogs')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">View and manage logs</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	
+	<div id="introVidStaffAccess" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidStaffAccess')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Project access page</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	<div id="introVidEditLog" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidEditLog')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Log details</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	<div id="introVidTesting" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidTesting')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Testing</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	<div id="introVidSample" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidSample')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Samples</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	<div id="introVidDrilling" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidDrilling')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Drilling methods</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	<div id="introVidWater" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidWater')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Water observations</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	<div id="introVidLogPhoto" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVidLogPhoto')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">Photos</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	<div id="introVid3DVisualiser" class="modal fade">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	<div class="modal-header">
+	<button type="button" data-dismiss="modal" aria-label="Close" class="close" onclick="stopVideo('introVid3DVisualiser')">
+	<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 id="myModalLabel" class="mb-4 text-xl font-bold text-white">3d Visualiser</h4>
+	</div>
+	<iframe width="598" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	</div>
+	</div>
+	
+	
+	
+	
+	<link rel="stylesheet" href="https://app.tablogs.com/assets/css/tip-twitter.css" type="text/css" />
+	<style>
+	.poshytip_body {
+	max-width: 50%;
+	background: white;
+	border: 1px solid grey;
+	padding: 10px;
+	border-radius: 15px;
+	}
+	</style>
+	<script src="https://app.tablogs.com/assets/js/jquery.poshytip.js"></script>
+
+	<script>
+	function showYoutubeVideo(id,video_url) {
+	$('#'+id).find('iframe').attr("src", video_url);
+	setTimeout(() => {
+	$('#'+id).modal('show');
+	}, 500);
+	
+	
+	}
+	function stopVideo(id) {
+	$('#'+id).find('iframe').attr("src", "");
+	}
+	</script>
+	<script>
+	
+	$(document).ready(function(){
+	setTimeout(() => {
+	$('#HelpIntroVidManageColumns').poshytip({
+	content: 'Select which columns you want included in the log PDF. You can also change the order of the columns by dragging them. Edit the display of the data in the column by clicking the column name. After making the changes, you will be able to see the changes in the PDF preview. You can also move this pop-up to view the PDF as you are making changes.\n' +
+	' <button type="button" onclick="showYoutubeVideo(\'??????\',\'???????\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidPdfTemplate').poshytip({
+	content: 'Learn how to modify a log template.\n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidPdfTemplate\',\'https://www.youtube.com/embed/_TVs0_oKgLE\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidWellDiagram').poshytip({
+	content: 'Learn how to log well installations in your logs.\n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidWellDiagram\',\'https://www.youtube.com/embed/zjXt2wPFeck\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidDrilling').poshytip({
+	content: 'Learn how to log the drilling methods you use for each borehole. \n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidDrilling\',\'https://www.youtube.com/embed/ypy4Q28KANc\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidTesting').poshytip({
+	content: 'Learn how to log all in-situ testing collected on site, including pocket pens, vein shears, DCPs, and more.\n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidTesting\',\'https://www.youtube.com/embed/WJ8e35m-7Jg\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidSitePlan').poshytip({
+	content: 'Declan shows how to plot boreholes on a siteplan or design drawing. \n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidSitePlan\',\'https://www.youtube.com/embed/R4u12lLhJ1o\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidLogPhoto').poshytip({
+	content: 'Learn how add general photos, borehole photos and corelog photos to your borehole logs.\n' +
+	' <button type="button"\n' +
+	' onclick="showYoutubeVideo(\'introVidLogPhoto\',\'https://www.youtube.com/embed/a6-NeAmCh2g\')"\n' +
+	' class="btn btn-md btn-default text-sm text-gray-80 block"\n' +
+	' data-toggle="modal" data-target="#introVid"\n' +
+	' style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidSample').poshytip({
+	content: 'Learn how to log all samples collected on site. \n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidSample\',\'https://www.youtube.com/embed/N48NMLZUMD0\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidWater').poshytip({
+	content: 'Learn how to log any water observations, including water inflow, outflow, water levels, and more.\n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidWater\',\'https://www.youtube.com/embed/oKWb3RiHlQ0\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidCoreDefects').poshytip({
+	content: 'Learn how to log rock corelog data, including RQDs, TCRs, and rockcore defects descriptions.\n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidCoreDefects\',\'https://www.youtube.com/embed/SZVzfEJqwrk\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidSubsurfaceCompare').poshytip({
+	content: 'Manage the logged sub-surface profiles. You can also quickly compare the logged results to another log, by selecting another log from the Quick Compare list in the top right corner of the page.\n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidCopyCopySubSurface\',\'https://www.youtube.com/embed/EVA_WErVs0c\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	
+	$('#helpIntroVidCollectedSamples').poshytip({
+	content: 'A summary of samples collected for the project. You can add / manage sample data with individual logs.\n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidCollectedSamples\',\'????????\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidEditLog').poshytip({
+	content: 'Learn how to switch between borehole logs and testpit logs, add location comments, change numbers, update log dates and more.\n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidEditLog\',\'https://www.youtube.com/embed/xcBk5W0suZc\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidTestingSummary').poshytip({
+	content: 'A summary of testing for the project. You can add / manage test data with individual logs\n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidTestingSummary\',\'????????\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidPhotoLogs').poshytip({
+	content: 'Learn about how to create photo log reports in only seconds.\n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidPhotoLogs\',\'https://www.youtube.com/embed/6kz2YHGY9U4\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidLaboratoryTesting').poshytip({
+	content: ' Create a Labratory Test Request for this project\n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidLaboratoryTesting\',\'https://www.youtube.com/embed/kr3SqYJ6JP0\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidRemarks').poshytip({
+	content: 'Learn how to log general remarks in your boreholes.\n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidRemarks\',\'https://www.youtube.com/embed/wKM3rVk3h1E\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidStaffAccess, #helpIntroVidGroupAccess').poshytip({
+	content: 'Learn how to control who from your team can access different projects and assign roles and permissions to different individuals.\n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidStaffAccess\',\'https://www.youtube.com/embed/SOhlcVBr75c\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidProjectOverview, #helpIntroVidProjectBrief, #helpIntroVidProposedDrillingLocations, #helpIntroVidProjectTeam, #helpIntroVidProjectStatusHistory').poshytip({
+	content: 'Discover how to edit data within your projects on the project overview page. Including how to update project briefings, proposed test location plans, team assignments, and the status of your projects. \n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidProjectOverview\',\'https://www.youtube.com/embed/t0SsQ_Uf5hM\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	
+	$('#helpIntroVid3DVisualiser').poshytip({
+	content: 'Learn about the TabLogs VIsualizer and how to view your projects in glorious 3D.\n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVid3DVisualiser\',\'https://www.youtube.com/embed/bFQj5SSTkPA\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidAvailableExports').poshytip({
+	content: 'A summary of of all of your generated reports and log data which you can download or email.\n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidAvailableExports\',\'????????\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidProjectLogs').poshytip({
+	content: 'Learn how to quickly view and manage your borehole logs.\n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidProjectLogs\',\'https://www.youtube.com/embed/aCvAapxuntY\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidManageSubsurface').poshytip({
+	content: 'Learn how to view previously logged profiles for boreholes, view classifications, reclassify soil and more.\n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidCopyCopySubSurface\',\'https://www.youtube.com/embed/rv4LYncKbMs\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidDashboard').poshytip({
+	content: 'Declan reveals how the TabLogs desktop application and dashboard can be used to quickly view and access your projects.\n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidDashboard\',\'https://www.youtube.com/embed/gGVVBherR0g\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidManageProject').poshytip({
+	content: 'Learn how to view and sort through projects via a map or list viewer. \n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidManageProject\',\'https://www.youtube.com/embed/-IEOtFy56fE\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidManageClient').poshytip({
+	content: 'Learn how to manage your clients in the TabLogs dashboard app. \n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidManageClient\',\'https://www.youtube.com/embed/vzKTmGjpq_w\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidManageStaff').poshytip({
+	content: 'Learn how to add team members to different projects. \n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidManageStaff\',\'https://www.youtube.com/embed/u7aT6EYFNCk\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidManageDrillRigs').poshytip({
+	content: 'Learn how to manage drill rigs in your projects. \n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidManageDrillRigs\',\'https://www.youtube.com/embed/GXPgFaFWAUM\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidManageExcavators').poshytip({
+	content: 'Learn how to manage excavators in your projects. \n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidManageExcavators\',\'https://www.youtube.com/embed/lXwEkgcqYzc\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidManageTimesheets').poshytip({
+	content: 'Use our timesheet page to ensure you accurately track time spent both travelling and on site across your projects. \n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidManageTimesheets\',\'https://www.youtube.com/embed/Rgyw0Tk0UKg\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	$('#helpIntroVidLogPreferences').poshytip({
+	content: 'Ensure log consistency across your consultancy by setting log preferences in your account. \n' +
+	' <button type="button" onclick="showYoutubeVideo(\'introVidManageLogPreferences\',\'https://www.youtube.com/embed/h2mFmOVxSQs\')" class="btn btn-md btn-default text-sm text-gray-80 block" data-toggle="modal" data-target="#introVid" style="border: none; background: none; width: 200px;padding: 0px;text-align: left;">\n' +
+	' <div class="underline ">\n' +
+	' <span style="">Watch Tutorial </span>\n' +
+	' </div>\n' +
+	' </button>',
+	// className: 'poshytip_body',
+	className: 'tip-twitter',
+	showTimeout: 1,
+	alignTo: 'target',
+	alignX: 'center',
+	offsetY: 0,
+	});
+	
+	
+	
+	
+	
+	
+	}, 1200);
+	
+	});
+	</script>
+	
+	<!-- <script src='../../../assets/js/components/admin/hubspot-token.js'></script> -->
+	
+	<script type="text/javascript">
+	
+	
+	
+	
+	
+	
+	</script>
+	</body>
+	</html>
+	
+	
+	
+	
+
