@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Management</title>
+    <title>Save Data to data_1.txt</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -30,7 +30,7 @@
     </style>
 </head>
 <body>
-    <h1>Data Management</h1>
+    <h1>Save Data to data_1.txt</h1>
     <form id="dataForm">
         <label for="name">Name:</label><br>
         <input type="text" id="name" required><br>
@@ -39,8 +39,7 @@
         <label for="phone">Phone:</label><br>
         <input type="text" id="phone" required><br>
         <button type="button" onclick="addData()">Add Data</button>
-        <button type="button" onclick="saveData()">Save Data</button>
-        <button type="button" onclick="loadData()">Load Data</button>
+        <button type="button" onclick="saveToFile()">Save to data_1.txt</button>
     </form>
 
     <table>
@@ -86,31 +85,18 @@
             });
         }
 
-        function saveData() {
-            const dataString = JSON.stringify(data);
-            const blob = new Blob([dataString], { type: 'application/json' });
+        function saveToFile() {
+            // Convert data to text format
+            let textData = data.map(item => `Name: ${item.name}, Age: ${item.age}, Phone: ${item.phone}`).join('\n');
+            
+            // Create a Blob object and initiate download
+            const blob = new Blob([textData], { type: 'text/plain' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'data.json';
+            a.download = 'data_1.txt';
             a.click();
             URL.revokeObjectURL(url);
-        }
-
-        function loadData() {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = 'application/json';
-            input.onchange = (event) => {
-                const file = event.target.files[0];
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    data = JSON.parse(e.target.result);
-                    updateTable();
-                };
-                reader.readAsText(file);
-            };
-            input.click();
         }
     </script>
 </body>
