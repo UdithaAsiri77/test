@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- <title>Firebase Monitoring Dashboard</title> !-->
+
+    <link rel="stylesheet" href="style.css">         <!-- CSS Link Karanna !-->
+
+ 
+
+</head>
+
+<body>
+    <div class="container">
+
+       
+        
+        <div id="data-container">
+            <p>Loading data...</p>
+        </div>
+        
+        <button class="refresh-btn" onclick="fetchData()">Refresh Data</button>
+
+
+       
+
+        <div class="Tank_1_Config">
+           
+            <div class="Tank_01" id="Tank_01"></div>
+
+          </div>
+
+
+          <div class="Tank_2_Config">
+           
+            <div class="Tank_02" id="Tank_02"></div>
+
+          </div> 
+          
+          <div class="Tank_3_Config">
+           
+            <div class="Tank_03" id="Tank_03"></div>
+
+          </div> 
+
+          
+      
+
+
+
+
+        <div id="last-updated" class="timestamp">Last updated: Loading...</div>
+            
+         
+        <h3 id="Pump_House_Device">ERR_PH_DEAVIC : Loading...</h3>
+
+
+        
+        <div class="motor-card">
+            <div class="motor-header">
+              <i class="fas fa-cogs"></i>
+              <h2>Motor 01</h2>
+            </div>
+            <div class="motor-status">
+              <h3 id="Motor_01_I1">Last updated: Loading...</h3>
+              <h3 id="Motor_01_I2">RPM: Loading...</h3>
+              <h3 id="Motor_01_I3">Voltage: Loading...</h3>
+              <h3 id="Motor_01_I4">Temperature: Loading...</h3>
+              <h3 id="Motor_01_I5">Last Updated: Loading...</h3>
+            </div>
+          </div>
+
+
+    </div>
+
+
+
+    
+    <script>
+
+        // 🔐 Firebase database එක connect කරන්න අවශ්‍ය configuration
+        const FIREBASE_HOST = "https://uditha-2fc62-default-rtdb.asia-southeast1.firebasedatabase.app";
+        const FIREBASE_AUTH = "0PfE9nU0OvR4CnRhVWMaQPFnSupj63CIGggX6bKU";
+
+        
+        let PH_COM_0_Count = 0; // PH_COM_1_Count counter එක
+        let PH_COM_1_Count = 0; // PH_COM_0_Count counter එක
+
+        
+        // 📥 Firebase database එකෙන් data ලබාගන්න asynchronous function එක
+        async function fetchData() {
+            try {
+                // 🌐 Firebase එකට GET request එකක් යවනවා
+                const response = await fetch(`${FIREBASE_HOST}/.json?auth=${FIREBASE_AUTH}`);
+                
+                // 🔄 Response එක JSON object එකක් බවට convert කරනවා
+                const data = await response.json();
+                
+                // ✅ Data එක valid නම් displayData() function එකට යවනවා
+                if (data) {
+                    displayData(data);
+                    
+                    // 🕒 දැන් වෙලාව ගන්නවා
+                    const now = new Date();
+    
+                    // 📌 UI එකේ 'last-updated' කියන element එක update කරනවා
+                    document.getElementById('last-updated').textContent = 
+                        `Last updated: ${now.toLocaleTimeString()}`;
+                }
+            } catch (error) {
+                // ❌ Data ගන්න ගියේ නෑනම් error එක console එකට print කරනවා
+                console.error('Error fetching data:', error);
+    
+
+                // ⚠️ UI එකට error message එකක් දානවා
+                document.getElementById('data-container').innerHTML = 
+                    '<p>Error loading data. Please try again.</p>';
+            }
+        }
+        
+
+
+        // 🖥️ Data එක UI එකේ පෙන්වන්න function එක
+        function displayData(data) {
+            // 📦 Data එක පෙන්වන්න තියන container එක select කරනවා
+            const container = document.getElementById('data-container');
+    
+            // 🧹 පැරණි content clear කරනවා
+           container.innerHTML = '';
+
+      
+            // 🧩 Panal 1-4 දක්වා තියන value එකක් display කරන්න createDataItem() function එක call කරනවා
+            createDataItem(container, "Panal_1", data['Panal_1']);
+            createDataItem(container, "Panal_2", data['Panal_2']);
+            createDataItem(container, "Panal_3", data['Panal_3']);
+            createDataItem(container, "Panal_4", data['Panal_4']);
+            createDataItem(container, "WL", data['WL']);
+            createDataItem(container, "PH_Com", data['PH_Com']);
+
+        }
+        
+        // 🏗️ data item එකක් UI එකට හදන helper function එක
+        function createDataItem(container, key, value) {
+            // 🔲 නව data item එකක් represent කරන div එකක් හදනවා
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'data-item';
+
+           
+              // Panal_1 key එකට බලනවා Edit By uditha Asiri
+
+           if (key === "Panal_1" && String(value).charAt(0) === '1') {  ///////////////// Motor 01 Runing...
+
+            // value function call එක හරියට use කරන්න
+                 document.getElementById('Motor_01_I1').textContent = 
+                `Motor 01 : ${" Runing..."}`;  // value() එකට function call නොකරනවා
+
+               
+
+            }
+
+            if (key === "Panal_1" && String(value).charAt(0) === '2') { ///////////////// Motor 01 Stop
+
+            // value function call එක හරියට use කරන්න
+                document.getElementById('Motor_01_I1').textContent = 
+                `Motor 01 : ${" STOP"}`;  // value() එකට function call නොකරනවා
+              
+
+            }
+
+        
+            if (key === "Panal_1" && String(value).charAt(1) === '1') {  ///////////////// Motor 01 Auto / Manual
+            // value function call එක හරියට use කරන්න
+                   document.getElementById('Motor_01_I2').textContent = 
+                  `Motor 01 : ${" Auto"}`;  // value() එකට function call නොකරනවා
+               
+            }
+
+            if (key === "Panal_1" && String(value).charAt(1) === '2') { ///////////////// Motor 01 Manual
+
+                // value function call එක හරියට use කරන්න
+                      document.getElementById('Motor_01_I2').textContent = 
+                     `Motor 01 : ${" Manual"}`;  // value() එකට function call නොකරනවා
+                     
+            }
+
+
+
+            if (key === "WL") { ////////////////////////////////////// TANK 1 LEVEL Send html code
+
+               if(String(value).charAt(0) === '1') {
+                         
+                document.getElementById("Tank_01").style.height = "0%"; // Tank eka fill wenawa        
+
+               }
+
+               if(String(value).charAt(0) === '2') {
+                         
+                document.getElementById("Tank_01").style.height = "33%"; // Tank eka fill wenawa        
+
+               }
+
+               if(String(value).charAt(0) === '3') {
+                         
+                document.getElementById("Tank_01").style.height = "66%"; // Tank eka fill wenawa
+                
+               }
+
+               if(String(value).charAt(0) === '4') {
+                         
+                document.getElementById("Tank_01").style.height = "100%"; // Tank eka fill wenawa
+                         
+               }
+                    
+  
+             }/////////////////////////////// Tank 1 end
+
+
+             if (key === "WL") { ////////////////////////////////////// TANK 2 LEVEL Send html code
+
+                if(String(value).charAt(1) === '1') {
+          
+                    document.getElementById("Tank_02").style.height = "0%"; // Tank eka fill wenawa        
+
+                }
+
+                if(String(value).charAt(1) === '2') {
+          
+                    document.getElementById("Tank_02").style.height = "33%"; // Tank eka fill wenawa        
+
+                }
+
+                if(String(value).charAt(1) === '3') {
+          
+                     document.getElementById("Tank_02").style.height = "66%"; // Tank eka fill wenawa
+ 
+                }
+
+                if(String(value).charAt(1) === '4') {
+          
+                    document.getElementById("Tank_02").style.height = "100%"; // Tank eka fill wenawa
+          
+                }
+     
+
+           }/////////////////////////////// Tank 2 end
+          
+
+           if (key === "WL") { ////////////////////////////////////// TANK 3 LEVEL Send html code
+
+               if(String(value).charAt(2) === '1') {
+
+                 document.getElementById("Tank_03").style.height = "0%"; // Tank eka fill wenawa        
+
+            }
+
+            if(String(value).charAt(2) === '2') {
+
+                 document.getElementById("Tank_03").style.height = "33%"; // Tank eka fill wenawa        
+
+            }               
+
+            if(String(value).charAt(2) === '3') {
+
+                 document.getElementById("Tank_03").style.height = "66%"; // Tank eka fill wenawa
+
+            }
+
+            if(String(value).charAt(2) === '4') {
+
+                document.getElementById("Tank_03").style.height = "100%"; // Tank eka fill wenawa
+
+            }
+
+
+        }/////////////////////////////// Tank 3 end
+
+
+
+
+
+        
+        ////////////////////////////////////////////////////////////////////////////////////////// PH And Tank Comm Check
+        ////////////////////////////////////////////////////////////////////////////////////////// PH And Tank Comm Check
+
+
+            if (key === "PH_Com" && String(value).charAt(0) === '0') {
+
+                PH_COM_0_Count++;
+                PH_COM_1_Count = 0;
+ 
+                 document.getElementById('Motor_01_I3').textContent = 
+                `Motor 01 : ${PH_COM_0_Count}`;  // value() එකට function call නොකරනවා
+
+            }
+
+
+            if (key === "PH_Com" && String(value).charAt(0) === '1') {
+
+                PH_COM_1_Count++;
+                PH_COM_0_Count = 0;
+
+                 document.getElementById('Motor_01_I4').textContent = 
+                `Motor 01 : ${PH_COM_1_Count}`;  // value() එකට function call නොකරනවා
+
+            }
+
+            if(PH_COM_0_Count < 10 && PH_COM_1_Count < 10 ){
+
+                document.getElementById('Pump_House_Device').textContent = 
+                `Pump House Device : ${" Online"}`;  // value() එකට function call නොකරනවා
+             
+            }else{
+                
+                document.getElementById('Pump_House_Device').textContent = 
+                `Pump House Device : ${" Offline"}`;  // value() එකට function call නොකරනවා
+
+            }
+
+
+               // ERR_PH_DEAVIC
+        
+
+        ////////////////////////////////////////////////////////////////////////////////////////// PH And Tank Comm Check End
+        ////////////////////////////////////////////////////////////////////////////////////////// PH And Tank Comm Check End
+
+
+
+
+        }
+
+
+        
+        // 🟢 Page එක fully load වුණු පසු පළමුව data fetch කරනවා
+        document.addEventListener('DOMContentLoaded', fetchData);
+        
+        // 🔁 හැම milliseconds 500ක interval එකකින් data එක නැවත fetch කරනවා
+        setInterval(fetchData, 500);
+    
+    </script>
+    
+</body>
+</html>

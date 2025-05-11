@@ -1,0 +1,250 @@
+
+
+
+/***********************************************************************************************      tank_1 Config          */
+ /***********************************************************************************************      tank_1 Config          */
+
+/* Tank Configuration with Positioning */
+.Tank_1_Config {
+
+    width: 150px;
+    height: 300px;
+    border: 1px solid #9998a1;  /* Black border for the tank */
+    border-radius: 24px;
+    position: absolute; /* Absolute position for exact placement */
+    top: 50px; /* Y-axis position */
+    left: 50px; /* X-axis position */
+    overflow: hidden;
+    background: linear-gradient(145deg, #f2f9ff, #e0f7fa);
+    box-shadow: 
+      inset -5px -5px 25px rgba(36, 18, 190, 0.7),
+      inset 5px 5px 25px rgba(190, 20, 20, 0.05),
+      8px 8px 40px rgba(187, 17, 17, 0.15);
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column-reverse;
+    
+  }
+  
+  
+/* Tank Fill Percentage (Water Level) */
+.Tank_01 {
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0%; /* Adjust this for different water levels */
+    background: linear-gradient(to top, #0382bd, #0397db, #03a9f4);  /* Realistic Blue-Green Gradient */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: height 2s ease-in-out, transform 0.5s ease;
+    animation: wave 3s ease-in-out infinite, ripple 1s ease-in-out infinite;
+    transform-origin: bottom;
+    border-top: 1px solid #477de2; /* Adding a black edge to the top of the water */
+    
+  }
+  
+
+  
+  
+  
+  
+
+/***********************************************************************************************      tank_2 Config          */
+/***********************************************************************************************      tank_2 Config          */
+
+
+  
+  .Tank_2_Config {                /**********************      tank_2 Config          */
+
+    width: 150px;
+    height: 300px;
+    border: 1px solid #9998a1;  /* Black border for the tank */
+    border-radius: 24px;
+    position: absolute; /* Absolute position for exact placement */
+    top: 50px; /* Y-axis position */
+    left: 220px; /* X-axis position */
+    overflow: hidden;
+    background: linear-gradient(145deg, #f2f9ff, #e0f7fa);
+    box-shadow: 
+      inset -5px -5px 25px rgba(36, 18, 190, 0.7),
+      inset 5px 5px 25px rgba(190, 20, 20, 0.05),
+      8px 8px 40px rgba(187, 17, 17, 0.15);
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column-reverse;
+
+
+  }
+
+  .Tank_02 {                   /**********************      tank_2 Fill %          */
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0%; /* Adjust this for different water levels */
+    background: linear-gradient(to top, #0382bd, #0397db, #03a9f4);  /* Realistic Blue-Green Gradient */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: height 2s ease-in-out, transform 0.5s ease;
+    animation: wave 3s ease-in-out infinite, ripple 1s ease-in-out infinite;
+    transform-origin: bottom;
+    border-top: 1px solid #477de2; /* Adding a black edge to the top of the water */
+
+  }
+
+
+/***********************************************************************************************      tank_3 Config          */
+/***********************************************************************************************      tank_3 Config          */
+
+
+  
+.Tank_3_Config {                /**********************      tank_3 Config          */
+
+    width: 150px;
+    height: 300px;
+    border: 1px solid #9998a1;  /* Black border for the tank */
+    border-radius: 24px;
+    position: absolute; /* Absolute position for exact placement */
+    top: 50px; /* Y-axis position */
+    left: 390px; /* X-axis position */
+    overflow: hidden;
+    background: linear-gradient(145deg, #f2f9ff, #e0f7fa);
+    box-shadow: 
+      inset -5px -5px 25px rgba(36, 18, 190, 0.7),
+      inset 5px 5px 25px rgba(190, 20, 20, 0.05),
+      8px 8px 40px rgba(187, 17, 17, 0.15);
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column-reverse;
+
+
+
+  }
+
+  .Tank_03 {                   /**********************      tank_3 Fill %          */
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0%; /* Adjust this for different water levels */
+    background: linear-gradient(to top, #0382bd, #0397db, #03a9f4);  /* Realistic Blue-Green Gradient */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: height 2s ease-in-out, transform 0.5s ease;
+    animation: wave 3s ease-in-out infinite, ripple 1s ease-in-out infinite;
+    transform-origin: bottom;
+    border-top: 1px solid #477de2; /* Adding a black edge to the top of the water */
+  }
+
+
+
+
+  /*  tank efeckt//////////////////////////////////// */
+  /*  tank efeckt//////////////////////////////////// */
+
+
+/* Tank Water Ripple Animation */
+@keyframes ripple {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.03);
+    }
+  }
+  
+  /* Water Wave Animation */
+  @keyframes wave {
+    0%, 100% {
+      transform: scaleX(1);
+    }
+    50% {
+      transform: scaleX(1.03);
+    }
+  }
+  
+
+
+ /*  tank efeckt//////////////////////////////////// END */
+/*  tank efeckt//////////////////////////////////// END */
+
+
+
+
+
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #c1e0da, #acb6e5);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    backdrop-filter: blur(4px);
+  }
+
+
+
+
+
+
+  .motor-card {
+    background: rgba(255, 255, 255, 0.15); /* පසුබිම් පැහැය - ත්‍රාන්ස්පරන්ට් වර්ගයක් */
+    border-radius: 20px; /* කෙරේල් හැඩයට වට රවුම් කිරීම */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* පිටතට වැටෙන හෙවුණු影 */
+    backdrop-filter: blur(10px); /* පිටුපස blur කිරීම (glass effect එකක්) */
+    -webkit-backdrop-filter: blur(10px); /* Safari සඳහා support */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* ත්‍රාන්ස්පරන්ට් වටේ border එකක් */
+    width: 200px; /* card එකේ පළල */
+    padding: 20px; /* ඇතුළත content එකට අවශ්‍ය ඉඩ */
+    color: #141313; /* අකුරු වර්ණය (දුඹුරු කළු වර්ණය) */
+    transition: 0.4s ease-in-out; /* soft animate වෙනවා hover කරන වෙලාවෙ */
+    position: absolute; /* පිහිටීමක් නිශ්චිත තැනකට */
+    top: 400px; /* Y-axis වලින් ඉහළින් පිහිටීම */
+    left: 20px; /* X-axis වලින් වම්පැත්තට පිහිටීම */
+  }
+  
+  .motor-card:hover {
+    transform: scale(1.02); /* hover කරන විට card එක ටිකක් zoom වෙනවා */
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3); /* hover වෙද්දි shadow එක වැඩිපුර දිස්වෙයි */
+  }
+  
+  .motor-header {
+    display: flex; /* row layout එකක් set කරනවා */
+    align-items: center; /* vertical center කරනවා */
+    gap: 0px; /* icon එක හා title එක අතර හිස්තැන */
+    margin-bottom: 15px; /* පහලට spacing එකක් */
+  }
+  
+  .motor-header i {
+    font-size: 20px; /* icon එකට පළල ඉතා විශාල */
+    color: #474040; /* icon වර්ණය සුදුයි */
+  }
+  
+  .motor-header h2 {
+    font-size: 20px; /* සිරසියේ අකුරු විශාලත්වය */
+    font-weight: 600; /* boldness එක */
+    margin: 0; /* margin එක නැහැ (reset) */
+  }
+  
+  .motor-status h3 {
+    background: rgba(255, 255, 255, 0.1); /* පසුබිම සුදු පැහැයෙන් ත්‍රාන්ස්පරන්ට් */
+    padding: 5px 14px; /* ඇතුළත content එකට padding */
+    border-radius: 12px; /* වටකුරු හරස්කෝණ */
+    font-size: 14px; /* font විශාලත්වය */
+    font-weight: 500; /* boldness */
+    margin: -0px 0; /* මැදි margin එක */
+    border-left: 2px solid #ffffff; /* වම් පැත්තෙන් සුදු පාටින් දිගු ඉරි */
+  }
+  
+
+
+
+
+
+
+
+
